@@ -4,6 +4,9 @@ import type { BookListProps } from "../book-types";
 
 import BookSectionActions from "../BookActions";
 import BookListCard from "./BookListCard";
+import EmptyData from "../../../../components/EmptyData";
+import useLabels from "../../../../hooks/use-labels";
+import { FolderIcon } from "../../../../svg-images";
 
 const BookList = ({
   bookSection,
@@ -12,6 +15,11 @@ const BookList = ({
   handleEditBook,
   handleAddChild,
 }: BookListProps) => {
+  const { noBookSectionYetLabel, createYourFirstSectionLabel } = useLabels([
+    "noBookSectionYetLabel",
+    "createYourFirstSectionLabel",
+  ]);
+
   const bookList =
     bookSection.length > 0 ? (
       bookSection.map((book) => {
@@ -53,7 +61,11 @@ const BookList = ({
         );
       })
     ) : (
-      <>no book</>
+      <EmptyData
+        icon={<FolderIcon />}
+        title={noBookSectionYetLabel}
+        description={createYourFirstSectionLabel}
+      />
     );
 
   return <div className="book-list-container">{bookList}</div>;

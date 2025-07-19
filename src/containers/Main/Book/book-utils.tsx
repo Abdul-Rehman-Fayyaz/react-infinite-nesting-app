@@ -114,3 +114,9 @@ export const prepareBookStatistics = (bookSection: BookSectionProps[]) => {
     maxDepth,
   };
 };
+
+export const submitBtnLabel: Record<string, boolean> = {
+  add: true,
+  child: true,
+  edit: false,
+};

@@ -1,0 +1,20 @@
+.empty-data-container {
+  background-color: var(--white-color);
+  padding: 20px;
+  border-radius: 24px;
+  display: flex;
+  flex-flow: column;
+  gap: 10px;
+}
+
+.empty-data-container .title {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--black-color);
+}
+
+.empty-data-container .description {
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--black-color);
+}

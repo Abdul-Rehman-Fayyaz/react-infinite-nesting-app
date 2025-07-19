@@ -6,7 +6,7 @@ import TitleDescriptionBox from "../../../../components/TitleDescriptionBox";
 import useLabels from "../../../../hooks/use-labels";
 import { getSubmissionData } from "../book-fields-validation";
 import type { AddBookTypes, BookFormProps } from "../book-types";
-import { addBookInitialData } from "../book-utils";
+import { addBookInitialData, submitBtnLabel } from "../book-utils";
 
 const BookForm = ({
   closeModal,
@@ -20,11 +20,13 @@ const BookForm = ({
     addNewBookLabel,
     enterBookNameLabel,
     enterBookDescriptionLabel,
+    updateBookLabel,
     addBookLabel,
   } = useLabels([
     "addNewBookLabel",
     "enterBookNameLabel",
     "enterBookDescriptionLabel",
+    "updateBookLabel",
     "addBookLabel",
   ]);
 
@@ -84,7 +86,10 @@ const BookForm = ({
 
   return (
     <div className="add-book-form">
-      <TitleDescriptionBox title={addNewBookLabel} className="heading-style" />
+      <TitleDescriptionBox
+        title={submitBtnLabel[modalType] ? addNewBookLabel : updateBookLabel}
+        className="heading-style"
+      />
 
       <Form
         layout="vertical"
@@ -127,7 +132,9 @@ const BookForm = ({
         className="add-book-submit-btn"
         size="large"
       >
-        <span>{addBookLabel}</span>
+        <span>
+          {submitBtnLabel[modalType] ? addBookLabel : updateBookLabel}
+        </span>
       </Button>
     </div>
   );

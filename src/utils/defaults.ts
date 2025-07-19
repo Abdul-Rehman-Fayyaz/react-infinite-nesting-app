@@ -33,6 +33,7 @@ const defaults = {
   collaboratorsLabel: "Collaborators",
   maxDepthLabel: "Max Depth",
   addBookLabel: "Add Book",
+  updateBookLabel: "Update Book",
   addNewBookLabel: "Add New Book",
   titleLabel: "Title",
   descriptionLabel: "Description",
@@ -42,6 +43,9 @@ const defaults = {
   collaboratorLabel: "Collaborator",
   updatedAtLabel: "Updated At",
   levelLabel: "Level",
+  noBookSectionYetLabel: "No Book Section Yet",
+  createYourFirstSectionLabel:
+    "Create your first section to get started with infinite nesting",
 
   /**
    * Common
