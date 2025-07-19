@@ -6,8 +6,23 @@ export const useBooks = (initialSections: BookSectionProps[]) => {
     useState<BookSectionProps[]>(initialSections);
 
   const handleDeleteBook = (id: string) => {
-    const filteredBooks = bookSection.filter((book) => book.id !== id);
-    setBookSection(filteredBooks);
+    const deleteBookRecursively = (
+      sections: BookSectionProps[]
+    ): BookSectionProps[] => {
+      return sections
+        .filter((book) => book.id !== id)
+        .map((book) => {
+          if (book.children && book.children.length > 0) {
+            return {
+              ...book,
+              children: deleteBookRecursively(book.children),
+            };
+          }
+          return book;
+        });
+    };
+
+    setBookSection((prev) => deleteBookRecursively(prev));
   };
 
   const handleEditBook = (id: string, data: BookProps) => {
