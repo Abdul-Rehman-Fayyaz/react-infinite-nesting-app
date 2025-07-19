@@ -11,20 +11,30 @@ export const useBooks = (initialSections: BookSectionProps[]) => {
   };
 
   const handleEditBook = (id: string, data: BookProps) => {
-    setBookSection((prev) =>
-      prev.map((book) =>
-        book.id === id
-          ? {
-              ...book,
-              title: data.title,
-              description: data.description,
-              author: data.author,
-              collaborator: data.collaborator,
-              updatedAt: new Date(),
-            }
-          : book
-      )
-    );
+    const updateBookRecursively = (
+      sections: BookSectionProps[]
+    ): BookSectionProps[] => {
+      return sections.map((book) => {
+        if (book.id === id) {
+          return {
+            ...book,
+            title: data.title,
+            description: data.description,
+            author: data.author,
+            collaborator: data.collaborator,
+            updatedAt: new Date(),
+          };
+        } else if (book.children && book.children.length > 0) {
+          return {
+            ...book,
+            children: updateBookRecursively(book.children),
+          };
+        }
+        return book;
+      });
+    };
+
+    setBookSection((prev) => updateBookRecursively(prev));
   };
 
   const handleAddChild = (parentId: string, data: BookProps) => {
