@@ -26,6 +26,7 @@ const Signin = ({ updateAuthForm }: AuthFromProps) => {
     haveAlreadyAccount,
     enterPasswordLabel,
     signupLabel,
+    demoAccountsLabel,
   } = useLabels([
     "signinLabel",
     "enterYourSigninLabel",
@@ -35,6 +36,7 @@ const Signin = ({ updateAuthForm }: AuthFromProps) => {
     "signupLabel",
     "emailLabel",
     "passwordLabel",
+    "demoAccountsLabel",
   ]);
 
   const [form] = Form.useForm();
@@ -143,6 +145,7 @@ const Signin = ({ updateAuthForm }: AuthFromProps) => {
         <span>{signupLabel}</span>
       </div>
 
+      <div className="demo-accounts">{demoAccountsLabel}:</div>
       {sampleLogins.map((item) => {
         const { email, password, key } = item;
         return (

@@ -21,6 +21,7 @@ const defaults = {
   signupLabel: "Sign Up",
   enterYourSignupLabel: "Enter your email to Sign Up",
   donotHaveAccount: "Don’t have an account?",
+  demoAccountsLabel: "Demo Accounts",
 
   /**
    * BOOKS
