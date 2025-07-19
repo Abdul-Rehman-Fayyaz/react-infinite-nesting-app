@@ -1,0 +1,74 @@
+.registration-page {
+  height: 100vh;
+}
+
+.brand-name {
+  font-size: 36px;
+  font-weight: 600;
+  color: var(--black-color);
+  margin-bottom: 100px;
+}
+
+.registratin-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  flex-flow: column;
+}
+
+.registration-content {
+  max-width: 500px;
+  margin: 0 auto;
+  width: 100%;
+  border-radius: 24px;
+  padding: 24px;
+  background-color: var(--white-color);
+  box-shadow: 0px 2px 32px 0px #23120640;
+}
+
+.register-meta {
+  margin-bottom: 24px;
+}
+
+.register-meta .title {
+  font-weight: 600;
+  font-size: 24px;
+  margin-bottom: 16px;
+}
+
+.register-meta .description {
+  font-weight: 400;
+  font-size: 14px;
+}
+
+.account-existence-info {
+  margin: 24px 0;
+  font-weight: 400;
+  font-size: 14px;
+  text-align: center;
+}
+
+.account-existence-info span {
+  font-weight: 500;
+  margin-left: 5px;
+  cursor: pointer;
+}
+
+.registration-form .form-password-element {
+  padding: 0 11px;
+}
+
+.sample-logins {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+}
+
+.sample-logins .title,
+.sample-logins .description {
+  font-size: 14px;
+  color: var(--color);
+  font-weight: 600;
+}

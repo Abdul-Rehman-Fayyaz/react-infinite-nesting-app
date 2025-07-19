@@ -1,0 +1,17 @@
+.dropdown-trigger-content {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.dropdown-trigger-content .image-box-container {
+  width: 28px;
+  height: 28px;
+}
+
+.dropdown-trigger-content img {
+  width: 100%;
+  height: 100%;
+  border-radius: 6px;
+}

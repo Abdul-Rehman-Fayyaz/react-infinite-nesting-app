@@ -1,0 +1,154 @@
+.book-container {
+  padding: 40px 20px;
+}
+
+.book-header-container .heading-style {
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+.book-statistic-item {
+  text-align: left;
+  background-color: var(--white-color);
+  border-radius: 20px;
+  padding: 20px;
+}
+
+.book-statistic-item .media-mix-content {
+  display: flex;
+  gap: 10px;
+}
+
+.book-statistic-item .title {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--black-color);
+}
+
+.book-statistic-item .title {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--black-color);
+}
+
+.add-btn {
+  width: 170px;
+  height: 48px;
+  padding: 5px;
+  background-color: var(--black-color);
+  color: var(--white-color);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  font-size: 16px;
+  margin: 0 0 0 auto;
+}
+
+.add-btn .btn-box-icon {
+  position: relative;
+  top: 2px;
+}
+
+.add-book-form .title {
+  text-align: center;
+}
+
+.add-book-form {
+  text-align: right;
+}
+
+.book-list-container {
+  margin-top: 24px;
+}
+
+.book-list-item {
+  margin-bottom: 24px;
+}
+
+.book-list-content {
+  background-color: var(--white-color);
+  border-radius: 24px;
+  padding: 20px;
+  text-align: left;
+}
+
+.book-list-meta {
+  margin: 0;
+  padding-left: 0;
+  list-style-type: none;
+}
+
+.book-list-meta li {
+  display: inline-flex;
+  gap: 5px;
+  margin-right: 10px;
+  align-items: center;
+}
+
+.book-meta-info {
+  margin-bottom: 10px;
+}
+
+.book-meta-info .media-mix-content {
+  display: flex;
+  gap: 10px;
+}
+
+.book-meta-info .title {
+  font-size: 18px;
+  color: var(--black-color);
+  font-weight: 500;
+}
+
+.book-meta-info .description {
+  font-size: 16px;
+  color: var(--black-color);
+  font-weight: 400;
+}
+
+.book-list-meta li .label {
+  font-size: 14px;
+  color: var(--black-color);
+  font-weight: 400;
+}
+
+.book-list-meta li .value {
+  font-size: 16px;
+  color: var(--black-color);
+  font-weight: 500;
+}
+
+.book-actions-container {
+  background-color: var(--white-color);
+  border-radius: 24px;
+  padding: 20px;
+  text-align: right;
+  height: 100%;
+}
+
+.book-action-list {
+  margin: 0;
+  padding-left: 0;
+  list-style-type: none;
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+.book-action-list li:first-child {
+  flex: 1;
+  text-align: left;
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--black-color);
+}
+
+.book-action-list .action {
+  cursor: pointer;
+}
+
+.not-allowed {
+  cursor: not-allowed;
+}

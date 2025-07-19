@@ -1,0 +1,47 @@
+.header-container {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.brand-meta {
+  padding: 20px 20px 10px;
+  text-align: left;
+}
+
+.user-info-container {
+  padding: 20px 20px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 14px;
+}
+
+.user-info .title {
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--black-color);
+  margin-bottom: 8px;
+}
+
+.user-info .description {
+  background-color: var(--light-green-color);
+  font-size: 14px;
+  font-weight: 400;
+  width: max-content;
+  padding: 8px;
+  color: var(--white-color);
+  border-radius: 24px;
+  margin-bottom: 8px;
+}
+
+.user-profile-dropdown {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: var(--light-green-color);
+  color: var(--white-color);
+  font-weight: 700;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
