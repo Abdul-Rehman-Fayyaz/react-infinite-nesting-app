@@ -1,21 +1,21 @@
 import { Col, Row } from "antd";
-import { useEffect, useState } from "react";
+import { useMemo, useState } from "react";
 import useLabels from "../../../../hooks/use-labels";
 import { PlusIcon } from "../../../../svg-images";
 import { colSizes } from "../../../../utils/common-utils";
-import type { BookHeaderProps, BookStatProps } from "../book-types";
+import type { BookHeaderProps } from "../book-types";
 import {
   booksStatistics,
   bookStatsInitialData,
   prepareBookStatistics,
 } from "../book-utils";
 
+import { isEmpty } from "lodash";
 import ButtonBox from "../../../../components/ButtonBox";
 import MediaMix from "../../../../components/MediaMix";
 import ModalBox from "../../../../components/ModalBox";
 import TitleDescriptionBox from "../../../../components/TitleDescriptionBox";
 import AddBookForm from "../BookForm";
-import { isEmpty } from "lodash";
 
 const BookHeader = ({ handleNewBook, bookSection }: BookHeaderProps) => {
   const { yourProjectsLabel, organizeYourWorkLabel, addBookLabel } = useLabels([
@@ -25,16 +25,15 @@ const BookHeader = ({ handleNewBook, bookSection }: BookHeaderProps) => {
   ]);
 
   const [isOpen, setIsOpen] = useState(false);
-  const [stats, setStats] = useState<BookStatProps>(bookStatsInitialData);
 
   const toggle = () => {
     setIsOpen((prev) => !prev);
   };
 
-  useEffect(() => {
-    if (!isEmpty(bookSection)) {
-      setStats(prepareBookStatistics(bookSection));
-    }
+  const stats = useMemo(() => {
+    console.log("📊 Calculating statistics...");
+    if (isEmpty(bookSection)) return bookStatsInitialData;
+    return prepareBookStatistics(bookSection);
   }, [bookSection]);
 
   const statsList = booksStatistics(stats).map((stat) => {

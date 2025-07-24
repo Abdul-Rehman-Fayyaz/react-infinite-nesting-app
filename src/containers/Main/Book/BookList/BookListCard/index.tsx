@@ -1,9 +1,10 @@
+import React from "react";
 import MediaMix from "../../../../../components/MediaMix";
 import useLabels from "../../../../../hooks/use-labels";
 import { FolderIcon } from "../../../../../svg-images";
 import type { BookListCardProps } from "../../book-types";
 
-const BookListCard = ({ book }: BookListCardProps) => {
+const BookListCard = React.memo(({ book }: BookListCardProps) => {
   const { authorLabel, collaboratorLabel, updatedAtLabel } = useLabels([
     "authorLabel",
     "collaboratorLabel",
@@ -38,6 +39,6 @@ const BookListCard = ({ book }: BookListCardProps) => {
       </ul>
     </div>
   );
-};
+});
 
 export default BookListCard;

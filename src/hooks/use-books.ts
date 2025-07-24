@@ -1,11 +1,13 @@
-import { useState } from "react";
+"use client";
+
+import { useState, useCallback } from "react";
 import type { BookProps, BookSectionProps } from "../utils/interfaces";
 
 export const useBooks = (initialSections: BookSectionProps[]) => {
   const [bookSection, setBookSection] =
     useState<BookSectionProps[]>(initialSections);
 
-  const handleDeleteBook = (id: string) => {
+  const handleDeleteBook = useCallback((id: string) => {
     const deleteBookRecursively = (
       sections: BookSectionProps[]
     ): BookSectionProps[] => {
@@ -23,9 +25,9 @@ export const useBooks = (initialSections: BookSectionProps[]) => {
     };
 
     setBookSection((prev) => deleteBookRecursively(prev));
-  };
+  }, []);
 
-  const handleEditBook = (id: string, data: BookProps) => {
+  const handleEditBook = useCallback((id: string, data: BookProps) => {
     const updateBookRecursively = (
       sections: BookSectionProps[]
     ): BookSectionProps[] => {
@@ -50,9 +52,9 @@ export const useBooks = (initialSections: BookSectionProps[]) => {
     };
 
     setBookSection((prev) => updateBookRecursively(prev));
-  };
+  }, []);
 
-  const handleAddChild = (parentId: string, data: BookProps) => {
+  const handleAddChild = useCallback((parentId: string, data: BookProps) => {
     const newBookSection: BookSectionProps = {
       id: Date.now().toString(),
       title: data.title,
@@ -93,9 +95,9 @@ export const useBooks = (initialSections: BookSectionProps[]) => {
     setBookSection((prev) =>
       appendChildBookSection(prev, parentId, newBookSection)
     );
-  };
+  }, []);
 
-  const handleNewBook = (data: BookProps) => {
+  const handleNewBook = useCallback((data: BookProps) => {
     const newBook: BookSectionProps = {
       id: Date.now().toString(),
       title: data.title,
@@ -108,7 +110,7 @@ export const useBooks = (initialSections: BookSectionProps[]) => {
     };
 
     setBookSection((prev) => [...prev, newBook]);
-  };
+  }, []);
 
   return {
     bookSection,
